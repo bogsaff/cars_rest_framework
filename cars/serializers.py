@@ -5,10 +5,10 @@ from cars.models import Car
 
 class CarSerializer(serializers.ModelSerializer):
     id=serializers.IntegerField(read_only=True)
-    name=serializers.CharField(read_only=True)
-    power=serializers.IntegerField(read_only=True)
-    color=serializers.CharField(read_only=True)
-    numnber = serializers.CharField(read_only=True)
+    name=serializers.CharField()
+    power=serializers.IntegerField()
+    color=serializers.CharField()
+    number = serializers.CharField()
     def create(self, validated_data):
         return Car.objects.create(**validated_data)
 
